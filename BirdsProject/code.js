@@ -1,55 +1,5 @@
-﻿function generateTable() {
-    /*
-    // get the reference for the body
-    var body = document.getElementsByTagName("body")[0];
-
-    // creates a <table> element and a <tbody> element
-    var tbl = document.createElement("table");
-    var tblBody = document.createElement("tbody");
- 
-    // creating all cells
-    for (var i = 0; i < 2; i++)
-    {
-        // creates a table row
-        var row = document.createElement("tr");
- 
-        for (var j = 0; j < 2; j++)
-        {
-            // Create a <td> element and a text node, make the text
-            // node the contents of the <td>, and put the <td> at
-            // the end of the table row
-            var label = document.createElement("label");
-            label.setAttribute("label", "Label");
-            label.innerText = "Hoi";
-
-            var cell = document.createElement("INPUT");
-            cell.setAttribute("value", "Input");
-
-            row.appendChild(cell);
-        }
- 
-    // add the row to the end of the table body
-        tblBody.appendChild(row);
-    }
- 
-    // put the <tbody> in the <table>
-    tblBody.appendChild(label);
-    tbl.appendChild(tblBody);
-    // appends <table> into <body>
-    body.appendChild(tbl);
-    // sets the border attribute of tbl to 2;
-    //tbl.setAttribute("border", "2");
-    */
-}
-
-function Calculate()
+﻿function Calculate()
 {
-    //myBody = document.getElementsByTagName("body")[0];
-
-    //myTable = myBody.getElementsByTagName("table")[0];
-
-    //tableRows = mytablebody.getElementsByTagName("tr");
-
     inputFields = document.getElementsByTagName("input");
 
     var emptyFields = new Array();
