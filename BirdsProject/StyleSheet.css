@@ -1,0 +1,42 @@
+﻿body {
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:first-child {
+    border-bottom: 2px solid black;
+}
+
+tr {
+    background-color: #cccccc;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+    background-color: dodgerblue;
+
+    color: white;
+    font-size: 18px;
+}
