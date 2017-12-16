@@ -1,4 +1,4 @@
-﻿/*body {
+/*body {
 }
 
 
@@ -56,9 +56,14 @@ th {
     text-align: center;
 }
 
-input {
+thead th {
+    font-size: 3rem;
+}
+
+.form-control{
     height: 5rem;
     text-align: center;
+    color: red;
 }
 
 .btn {
@@ -66,6 +71,8 @@ input {
     width: 100%;
     height: 5rem;
     border-radius: 5px 5px 30px 30px;
+    font-size: 3rem;
+    vertical-align: middle;
 }
 
 /* new form code */
