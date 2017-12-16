@@ -11,21 +11,38 @@
 
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container col-8">
         <table class="table table-dark">
             <thead>
                 <th>Gram</th>
                 <th>Milliliter</th>
             </thead>
             <tr>
-                <th><input type="number" class="form-control" inputmode="numeric" id="mgOne" value=""></th>
-                <th><input type="number" class="form-control" inputmode="numeric" id="mlOne" value=""></th>
+                <th><input type="number" class="form-control" inputmode="numeric" id="mgOne" value="" placeholder="Begin gram"></th>
+                <th><input type="number" class="form-control" inputmode="numeric" id="mlOne" value="" placeholder="Begin ml"></th>
             </tr>
             <tr>
                 <th><input type="number" class="form-control" inputmode="numeric" id="mgTwo" value=""></th>
                 <th><input type="number" class="form-control" inputmode="numeric" id="mlTwo" value=""></th>
             </tr>
         </table>
+
+        <!--Form code-->
+
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="number" class="form-control form-control-lg" id="mgOne" placeholder="Begin gram">
+                <input type="number" class="form-control form-control-lg" id="mlOne" placeholder="Begin ml">
+            </div>
+        </form>
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="number" class="form-control form-control-lg" id="mgTwo" placeholder="Eind gram">
+                <input type="number" class="form-control form-control-lg" id="mlTwo" placeholder="Eind ml">
+            </div>
+        </form>
+
+        <!--End form code-->
 
         <div class="text-center">
             <button class="btn btn-primary" onclick="Calculate()">Bereken</button>
