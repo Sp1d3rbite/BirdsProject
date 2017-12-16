@@ -13,21 +13,40 @@
     <div class="container-fluid col-10">
         <table class="table table-dark">
             <thead>
-                <th>Gram</th>
-                <th>Milliliter</th>
+                <th>
+                    <div class="dropdown">
+                        <button id="weightUnitBtn" type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gram<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <button class="dropdown-item" type="button" onclick="ChangeWeightUnit(0, this)">Milligram</button>
+                            <button class="dropdown-item" type="button" onclick="ChangeWeightUnit(1, this)">Gram</button>
+                            <button class="dropdown-item" type="button" onclick="ChangeWeightUnit(2, this)">Kilo</button>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button id="fluidUnitBtn" type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Milliliter<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <button class="dropdown-item" type="button" onclick="ChangeFluidUnit(0, this)">Milliliter</button>
+                            <button class="dropdown-item" type="button" onclick="ChangeFluidUnit(1, this)" >Centiliter</button>
+                            <button class="dropdown-item" type="button" onclick="ChangeFluidUnit(2, this)" >Deciliter</button>
+                            <button class="dropdown-item" type="button" onclick="ChangeFluidUnit(3, this)" >Liter</button>
+                        </ul>
+                    </div>
+                </th>
             </thead>
             <tr>
-                <th><input type="number" class="form-control form-control-lg" id="mgOne" placeholder="Begin gram"></th>
-                <th><input type="number" class="form-control form-control-lg" id="mgOne" placeholder="Begin ml"></th>
+                <th><input type="number" class="form-control form-control-lg" id="mgOne" placeholder="Begin"></th>
+                <th><input type="number" class="form-control form-control-lg" id="mgOne" placeholder="Begin"></th>
             </tr>
             <tr>
-                <th><input type="number" class="form-control form-control-lg" id="mgTwo" placeholder="Eind gram"></th>
-                <th><input type="number" class="form-control form-control-lg" id="mlTwo" placeholder="Eind ml"></th>
+                <th><input type="number" class="form-control form-control-lg" id="mgTwo" placeholder="Eind"></th>
+                <th><input type="number" class="form-control form-control-lg" id="mlTwo" placeholder="Eind"></th>
             </tr>
         </table>
 
         <div class="text-center">
-            <button class="btn btn-primary" onclick="Calculate()">Bereken</button>
+            <button id="calcBtn" class="btn btn-primary" onclick="Calculate()">Bereken</button>
         </div>
     </div>
 

@@ -1,3 +1,8 @@
+var weightUnitIndex = 1;
+var weightUnit = 'Gram';
+var fluidUnitIndex = 0;
+var fluidUnit = 'Milliliter';
+
 function Calculate()
 {
     inputFields = document.getElementsByTagName("input");
@@ -28,7 +33,6 @@ function Calculate()
         inputFields[2].style.background = 'green';
         
         val = inputFields[2].value;
-        unit = 'gram';
     }
     else if (inputFields[3] === emptyFields[0])
     {
@@ -37,16 +41,15 @@ function Calculate()
         inputFields[3].style.background = 'green';
         
         val = inputFields[3].value;
-        unit = 'milliliter';
     }
     
     if (emptyFields.length > 0)
     {
-        CreateAndFillMessage('Je hebt ' + val + ' ' + unit + ' nodig!');
+        CreateAndFillMessage('Je hebt ' + val + ' ' + fluidUnit + ' nodig!');
     }
     else
     {
-        CreateAndFillMessage('Je hebt ' + inputFields[3].value + ' milliliter nodig voor een dier van ' + inputFields[2].value + ' gram!');
+        CreateAndFillMessage('Je hebt ' + inputFields[3].value + ' ' + fluidUnit + ' nodig voor een dier van ' + inputFields[2].value + ' ' + weightUnit);
     }
 }
 
@@ -77,7 +80,7 @@ function CreateAndFillMessage(msg)
     myDiv.setAttribute('class', 'customAlert');
     myDiv.classList.add('text-center');
     myDiv.classList.add('alert');
-    myDiv.classList.add('alert-success');
+    myDiv.classList.add('alert-info');
 
     text = document.createTextNode('');
 
@@ -88,6 +91,24 @@ function CreateAndFillMessage(msg)
     
     myDiv.textContent = msg;
 }
+
+// change units
+function ChangeWeightUnit(index, button) 
+{
+    document.getElementById('weightUnitBtn').innerHTML = button.innerHTML;
+    weightUnitIndex = index;
+    weightUnit = button.innerHTML;
+}
+
+function ChangeFluidUnit(index, button) 
+{
+    document.getElementById('fluidUnitBtn').innerHTML = button.innerHTML;
+    fluidUnitIndex = index;
+    fluidUnit = button.innerHTML;
+}
+
+
+
 
 
 

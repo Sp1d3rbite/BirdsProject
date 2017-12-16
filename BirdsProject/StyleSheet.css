@@ -68,21 +68,29 @@ thead th {
     color: black;
 }
 
-.btn {
+#calcBtn {
     width: 100%;
     border-radius: 0px 0px 25px 25px;
     border: 0px;
     font-size: 3rem;
 }
 
+#weightUnitBtn, #fluidUnitBtn {
+    width: 100%;
+    height: 100%;
+}
+
+.dropdown .btn {
+    padding: 20px;
+    margin: 0px;
+}
 .customAlert {
     margin-top: 2rem;
-    background-color: Green;
-    color: white;
     border-radius: 40px;
     padding: 10px 30px 10px 30px;
     
     font-size: 1.7rem;
+    box-shadow: 0px 5px 10px rgba(0,0,0, .6);
 }
 
 
