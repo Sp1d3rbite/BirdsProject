@@ -14,7 +14,7 @@ function Calculate()
 
         if (emptyFields.length > 1) {
             alert("Vul ten minste 3 velden in.");
-            break;
+            return;
         }
 
         inputFields[i].style.color = 'black';
