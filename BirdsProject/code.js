@@ -16,6 +16,9 @@ function Calculate()
             alert("Vul ten minste 3 velden in.");
             return;
         }
+        
+        if (inputFields[i].value !== '')
+            inputFields[i].value = ReplaceCommaWPeriod(inputFields[i].value);
 
         inputFields[i].style.color = 'black';
         inputFields[i].style.background = 'white';
@@ -39,8 +42,15 @@ function Calculate()
         val = inputFields[3].value;
         unit = 'milliliter';
     }
-
-    CreateAndFillMessage('Je hebt ' + val + ' ' + unit + ' nodig!');
+    
+    if (emptyFields.length > 0)
+    {
+        CreateAndFillMessage('Je hebt ' + val + ' ' + unit + ' nodig!');
+    }
+    else
+    {
+        CreateAndFillMessage('Je hebt ' + inputFields[3].value + ' milliliter nodig voor een dier van ' + inputFields[2].value + ' gram!');
+    }
 }
 
 function GetGramValue(gram, mil1, mil2)
@@ -53,34 +63,36 @@ function GetMilValue(gram1, mil1, gram2)
     return parseFloat((mil1.value / gram1.value * gram2.value).toFixed(2));
 }
 
+function ReplaceCommaWPeriod(val)
+{
+    return parseFloat(val.replace(/,/g, '.'));
+}
+
 function CreateAndFillMessage(msg) 
 {
     var myDiv;
     var text;
     
-    // create new if not existing
-    if (document.getElementById('custAlert') === null)
+    // delete old
+    if (document.getElementById('custAlert') !== null)
     {
-        myDiv = document.createElement('div');
-    
-        myDiv.id = 'custAlert';
-        myDiv.setAttribute('class', 'customAlert');
-        myDiv.classList.add('text-center');
-        myDiv.classList.add('alert');
-        myDiv.classList.add('alert-success');
-        
-        text = document.createTextNode('');
-        
-        var myContainer = document.body.getElementsByClassName('container-fluid')[0];
-    
-        myDiv.appendChild(text);
-        myContainer.appendChild(myDiv);
+        document.getElementById('custAlert').remove();
     }
-    // else, uses old one
-    else
-    {
-        myDiv = document.getElementById('custAlert');
-    }
+    
+    myDiv = document.createElement('div');
+    
+    myDiv.id = 'custAlert';
+    myDiv.setAttribute('class', 'customAlert');
+    myDiv.classList.add('text-center');
+    myDiv.classList.add('alert');
+    myDiv.classList.add('alert-success');
+
+    text = document.createTextNode('');
+
+    var myContainer = document.body.getElementsByClassName('container-fluid')[0];
+
+    myDiv.appendChild(text);
+    myContainer.appendChild(myDiv);
     
     myDiv.textContent = msg;
 }
