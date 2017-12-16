@@ -16,9 +16,6 @@ function Calculate()
             alert("Vul ten minste 3 velden in.");
             return;
         }
-        
-        if (inputFields[i].value !== '')
-            inputFields[i].value = ReplaceCommaWPeriod(inputFields[i].value);
 
         inputFields[i].style.color = 'black';
         inputFields[i].style.background = 'white';
@@ -55,17 +52,12 @@ function Calculate()
 
 function GetGramValue(gram, mil1, mil2)
 {
-    return parseFloat((gram.value / mil1.value * mil2.value).toFixed(2));
+    return parseFloat((gram.value / mil1.value * mil2.value).toFixed(3));
 }
 
 function GetMilValue(gram1, mil1, gram2)
 {
-    return parseFloat((mil1.value / gram1.value * gram2.value).toFixed(2));
-}
-
-function ReplaceCommaWPeriod(val)
-{
-    return parseFloat(val.replace(/,/g, '.'));
+    return parseFloat((mil1.value / gram1.value * gram2.value).toFixed(3));
 }
 
 function CreateAndFillMessage(msg) 
