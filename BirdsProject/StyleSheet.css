@@ -61,6 +61,11 @@ thead th {
 
 .form-control{
     text-align: center;
+    height: 6rem;
+    
+    font-size: 200%;
+    font-weight: 600;
+    color: black;
 }
 
 .btn {
